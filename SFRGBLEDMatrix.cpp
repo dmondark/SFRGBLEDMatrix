@@ -64,8 +64,8 @@ void SFRGBLEDMatrix::show() {
 #define X_MAX (byte)(pgm_read_word_near(coffset+c-CHAR_MIN+1)-(byte)pgm_read_word_near(coffset+c-CHAR_MIN))
 
 void SFRGBLEDMatrix::print(const Color color, const int xOffset, const int yOffset, const uint8_t size, const char c){
-  prog_uint16_t *coffset;
-  prog_uchar **line;
+  const uint16_t *coffset;
+  const unsigned char *const *line;
   
   switch(size){
     case 4:
@@ -102,7 +102,7 @@ void SFRGBLEDMatrix::print(const Color color, const int xOffset, const int yOffs
 }
 
 void SFRGBLEDMatrix::print(const Color color, int x, int y, const uint8_t size, const char *s){
-  prog_uint16_t *coffset;
+  const uint16_t *coffset;
   switch(size){
     case 4:
        coffset=coffset_4p;
@@ -122,7 +122,7 @@ void SFRGBLEDMatrix::print(const Color color, int x, int y, const uint8_t size, 
 }
 
 void SFRGBLEDMatrix::print_PF(const Color color, int x, int y, const uint8_t size, PGM_P s){
-  prog_uint16_t *coffset;
+  const uint16_t *coffset;
   char c;
 
   switch(size){

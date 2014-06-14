@@ -51,7 +51,7 @@ typedef uint16_t Color;
 
 // Gamma correction
 // 2.5 Gamma correction
-static unsigned char gamma25[] PROGMEM = {0, 0, 0, 0, 1, 1, 2, 2, 3, 4, 5, 7, 9, 10, 13, 15};
+static const unsigned char gamma25[] PROGMEM = {0, 0, 0, 0, 1, 1, 2, 2, 3, 4, 5, 7, 9, 10, 13, 15};
 #define RGB_GAMMA(r,g,b) (((pgm_read_byte(&gamma25[r]))<<(BITS_PER_COLOR*2))|((pgm_read_byte(&gamma25[g]))<<BITS_PER_COLOR)|(pgm_read_byte(&gamma25[b])))
 #define V_GAMMA(v) pgm_read_byte(&gamma25[v])
 
