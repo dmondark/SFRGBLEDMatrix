@@ -68,7 +68,7 @@ void SFRGBLEDMatrix::show() {
 void SFRGBLEDMatrix::print(const Color color, const int xOffset, const int yOffset, const uint8_t size, const char c){
   const uint16_t *coffset;
   const unsigned char *const *line;
-  
+
   switch(size){
     case 4:
        coffset=coffset_4p;
@@ -114,7 +114,7 @@ void SFRGBLEDMatrix::print(const Color color, int x, int y, const uint8_t size, 
        break;
     default:
        return;
-  }  
+  }
   for(uint16_t p=0;s[p]!='\0';p++){
     char c;
     c=s[p];
@@ -136,7 +136,7 @@ void SFRGBLEDMatrix::print_PF(const Color color, int x, int y, const uint8_t siz
        break;
     default:
        return;
-  }  
+  }
   for(uint16_t p=0;c!=0;p++){
     c=pgm_read_byte(s+p);
     print(color, x, y, size, c);
@@ -294,7 +294,7 @@ void SFRGBLEDMatrix::CRT(Color bgColor){
     if(p)
       box(bgColor, p-1, p-1, width-1-p+1, height-1-p+1);
     show();
-  }  
+  }
   for(byte p=height/2-1;p<width/2;p++){
     box(bgColor, p-1, height/2-2-1, width-1-p+1, height/2+1+1);
     show();

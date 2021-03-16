@@ -115,9 +115,9 @@ class SFRGBLEDMatrix {
     // Must be called before show() if SPI configuration was changed after SFRGBLEDMatrix()
     void setupSPI();
     // Must be called before show() if SPI / SS pins configuration were changed after SFRGBLEDMatrix()
-    void setupPINs(); 
+    void setupPINs();
     // Send buffer to the screens
-    void show(); 
+    void show();
     // Character drawing. Only size=4 or size=5 implemented for now
     void print(const Color color, const int x, const int y, const uint8_t size, const char c);
     void print(const Color color, const int x, const int y, const uint8_t size, const char *s);
